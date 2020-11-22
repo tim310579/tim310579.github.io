@@ -3181,4 +3181,4 @@ function parcoords(p) {
 }
 
 reorder.parcoords = parcoords;
-})(th
+})(this);
