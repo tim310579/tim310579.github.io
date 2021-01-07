@@ -15,4 +15,9 @@ for item in dates:
     i = i+1
 #print(dates)
 df.columns = dates
-df.to_csv('covid_19-confirmed_global.csv', index=False)
+df_2 = df.copy()
+for i in range(5, df.shape[1]):
+    for j in range(0, len(df)):
+        df_2.iat[j, i] = df.iat[j, i] - df.iat[j,i-1]
+        #print(df.iat[j,i], df.iat[j,i-1], df.iat[j, i] - df.iat[j,i-1])
+df_2.to_csv('covid_19-confirmed_global.csv', index=False)
